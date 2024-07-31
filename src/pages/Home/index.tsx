@@ -3,10 +3,14 @@ import { CategoriasDisplay, Container, Ellipse, FollowUs, HomeImage, HomeTitle, 
 import logo from "../../assets/elektroLogo.png";
 import homeImage from "../../assets/homeImage.png";
 
+/* Componentes */
+import HeaderHome from "../../components/HeaderHome";
 import Divisor from "../../components/Divisor";
 import Categoria from "../../components/Categoria";
 import Produto from "../../components/Produto";
+import Footer from "../../components/Footer";
 
+/* Categorias Elektro */
 import celularesImage from "../../assets/categorias/categoriaCelulares.png"
 import notebooksImage from "../../assets/categorias/categoriaNotebooks.png"
 import tabletsImage from "../../assets/categorias/categoriaTablets.png"
@@ -48,6 +52,7 @@ import linkedinLogo from "../../assets/icons/linkedin.png"
 export default function Home(){
     return (
         <Container> 
+            <HeaderHome/>
                 <HomeTitle>
                     <LogoImage src={logo}/>
                     Bem-vindo à Elektro!
@@ -58,7 +63,7 @@ export default function Home(){
                     <Ellipse></Ellipse>
                     <Ellipse></Ellipse>
                 </Options>
-                <Divisor width={100}/>
+                <Divisor width={90}/>
                 <ProductsSection>
                     <SectionTitle>Categorias Elektro</SectionTitle>
                     <CategoriasDisplay>
@@ -115,6 +120,7 @@ export default function Home(){
                         <SocialIcon src={linkedinLogo} alt="Logo do LinkedIn"></SocialIcon>
                     </SocialRow>
                 </FollowUs>
+                <Footer/>
         </Container>
     );
 }

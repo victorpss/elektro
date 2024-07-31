@@ -28,7 +28,7 @@ export const HomeTitle = styled.h1`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: 20px 0;
 `;
 
 export const HomeImage = styled.img`
@@ -38,6 +38,7 @@ export const HomeImage = styled.img`
 export const Options = styled.div`
     display:flex;
     gap: 8px;
+    margin: 7px 0 20px 0;
 `;
 
 export const Ellipse = styled.div<ellipseProps>`
