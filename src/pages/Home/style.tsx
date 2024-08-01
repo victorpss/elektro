@@ -32,7 +32,6 @@ export const HomeTitle = styled.h1`
 `;
 
 export const HomeImage = styled.img`
-
 `;
 
 export const Options = styled.div`
