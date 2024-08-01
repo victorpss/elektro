@@ -57,7 +57,7 @@ export default function Home(){
                     <LogoImage src={logo}/>
                     Bem-vindo à Elektro!
                 </HomeTitle>
-                <HomeImage src={homeImage}></HomeImage>
+                <HomeImage src={homeImage} alt="Imagem mostrando parcialmente um notebook, dois celulares e um relógio."></HomeImage>
                 <Options>   
                     <Ellipse full></Ellipse>
                     <Ellipse></Ellipse>
