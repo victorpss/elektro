@@ -50,7 +50,7 @@ export const Button = styled.button<textProps>`
     box-shadow: ${(props) => (props.fundoBranco ? "0px 4px 4px 0px rgba(0, 0, 0, 0.08)" : "none")};
     cursor: pointer;
 
-    :hover {
-        background-color: ${(props) => (props.fundoBranco ? "#DEDEDE" : "#1B1B1B")}; /* nao sei pq nao tá funcionando :( */
+    &:hover {
+        background-color: ${(props) => (props.fundoBranco ? "#DEDEDE" : "#1B1B1B")};
     }
 `;
