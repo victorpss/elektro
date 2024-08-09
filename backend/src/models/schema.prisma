@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  cpf  Int @id @default(autoincrement())
+  name String
+  phone Int
+  email String
+  password String
+  photo_path String?
+  orders Order[]
+  messages Message[]
+}
+
+model Order{
+  code Int @id @default(autoincrement())
+  deliveryMethod String
+  paymentMethod String
+  products_total Int // O valorarmazenado é o valor da compra multiplicado por 100 (ex: R$ 12,98 -> 1298)
+  shipping_total Int
+  subtotal Int
+  user User @relation(fields: [userCpf], references: [cpf])
+  userCpf Int
+}
+
+model Message{
+  id Int @id @default(autoincrement())
+  content String
+  date  DateTime
+  hour  DateTime @db.Time()
+  total_characters Int
+  format String
+  author User @relation(fields: [authorCpf], references: [cpf])
+  authorCpf Int
+}
