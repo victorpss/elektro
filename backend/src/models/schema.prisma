@@ -38,8 +38,8 @@ model Order{
 model Message{
   id Int @id @default(autoincrement())
   content String
-  date  DateTime
-  hour  DateTime @db.Time()
+  date  DateTime @default(now())
+  hour  DateTime @default(now())
   total_characters Int
   format String
   author User @relation(fields: [authorCpf], references: [cpf])
