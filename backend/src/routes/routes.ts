@@ -8,21 +8,24 @@ const router = Router();
 
 // users
 router.post("/user", userController.create);
-router.get("/user", userController.read);
-router.put("/user", userController.update);
-router.delete("/user", userController.delete);
+router.get("/users", userController.readAll);
+router.get("/findUser", userController.readOne);
+router.delete("/userDeleted", userController.delete);
+router.put("/userUpdated", userController.update);
 
 // orders
-router.post("/order/:code", orderController.create);
-router.get("/order/:code", orderController.read);
-router.put("/order/:code", orderController.update);
-router.delete("/order/:code", orderController.delete);
+router.post("/order/:cpf", orderController.create);
+router.get("/orders", orderController.readAll);
+router.get("/findOrder", orderController.readOne);
+router.delete("/orderDeleted", orderController.delete);
+router.put("/orderUpdated", orderController.update);
 
 // messages
-router.post("/message/:id", messageController.create);
-router.get("/message/:id", messageController.read);
-router.put("/message/:id", messageController.update);
-router.delete("/message/:id", messageController.delete);
+router.post("/message/:cpf", messageController.create);
+router.get("/messages", messageController.readAll);
+router.get("/findMessage", messageController.readOne);
+router.delete("/messageDeleted", messageController.delete);
+router.put("/messageUpdated", messageController.update);
 
 
 export default router;
