@@ -14,23 +14,25 @@ datasource db {
 }
 
 model User{
-  cpf  Int @id @default(autoincrement())
+  cpf  Int @id
   name String
-  phone Int
-  email String
+  phone String
+  email String @unique
   password String
   photo_path String?
+  
   orders Order[]
   messages Message[]
 }
 
 model Order{
   code Int @id @default(autoincrement())
-  deliveryMethod String
-  paymentMethod String
-  products_total Int // O valorarmazenado é o valor da compra multiplicado por 100 (ex: R$ 12,98 -> 1298)
+  delivery_method String
+  payment_method String
+  products_total Int // O valor armazenado é o valor da compra multiplicado por 100 (ex: R$ 12,98 -> 1298)
   shipping_total Int
   subtotal Int
+
   user User @relation(fields: [userCpf], references: [cpf])
   userCpf Int
 }
@@ -38,10 +40,11 @@ model Order{
 model Message{
   id Int @id @default(autoincrement())
   content String
-  date  DateTime @default(now())
-  hour  DateTime @default(now())
+  date  String
+  hour  String
   total_characters Int
   format String
+
   author User @relation(fields: [authorCpf], references: [cpf])
   authorCpf Int
 }
